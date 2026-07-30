@@ -1,0 +1,40 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    text-align: center;
+}
+
+header{
+    background-color: blue;
+    color: white;
+    padding: 15px;
+}
+
+main{
+    background-color: white;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+img{
+    margin: 15px;
+}
+
+input, textarea{
+    width: 80%;
+    padding: 8px;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+}
+
+footer{
+    background-color: blue;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+}
