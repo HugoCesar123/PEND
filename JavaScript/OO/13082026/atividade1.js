@@ -1,69 +1,80 @@
-const produtos = [];
-
-const nome = document.querySelector("#nome");
-const categoria = document.querySelector("#categoria");
-const preco = document.querySelector("#preco");
-const desconto = document.querySelector("#desconto");
-const botaoCalcular = document.querySelector("#botaoCalcular");
-const resultado = document.querySelector("#resultado");
-
-botaoCalcular.addEventListener("click", function () {
-
-    const produto = new Produto(
-        nome.value,
-        categoria.value,
-        preco.value,
-        desconto.value
-    );
-
-    produto.calcular();
-
-    produtos.push(produto);
-
-    console.log(produtos);
-
-    produto.exibirNaTela();
-
-});
-
-
 class Produto {
 
-    constructor(nome, categoria, preco, desconto) {
-
+    constructor(nome, preco, categoria, desconto) {
         this.nome = nome;
+        this.preco = preco;
         this.categoria = categoria;
-        this.preco = Number(preco);
-        this.desconto = Number(desconto);
-
+        this.desconto = desconto;
     }
 
-    calcular() {
+    aplicarDesconto() {
+        const novoPreco = this.preco - (this.preco * this.desconto / 100);
+        return novoPreco;
+    }
+}
 
-        this.valorDesconto = this.preco * (this.desconto / 100);
-        this.precoFinal = this.preco - this.valorDesconto;
 
+class Produtos {
+
+    constructor() {
+        this.produtos = [];
     }
 
-    exibirNaTela() {
+    adicionarProduto(produto) {
+        this.produtos.push(produto);
+    }
+
+    excluirProduto(excluirItens) {
+        this.produtos.splice(excluirItens, 1);
+        this.exibir();
+    }
+
+    exibir() {
+        const resultado = document.querySelector("#resultado");
 
         resultado.innerHTML = "";
 
-        produtos.forEach(produto => {
+        this.produtos.forEach((produto, excluirItens) => {
 
             resultado.innerHTML += `
                 <div>
                     <p>Nome: ${produto.nome}</p>
+                    <p>Preço: ${produto.aplicarDesconto()}</p>
                     <p>Categoria: ${produto.categoria}</p>
-                    <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
                     <p>Desconto: ${produto.desconto}%</p>
-                    <p>Preço final: R$ ${produto.precoFinal.toFixed(2)}</p>
-                    <hr>
+
+                    <button onclick="produtos.excluirProduto(${excluirItens})">
+                        Excluir
+                    </button>
                 </div>
+                <br>
             `;
 
         });
-
     }
-
 }
+
+
+const produtos = new Produtos();
+
+const nome = document.querySelector("#nome");
+const preco = document.querySelector("#preco");
+const categoria = document.querySelector("#categoria");
+const desconto = document.querySelector("#desconto");
+const botaoCadastrar = document.querySelector("#botaoCadastrar");
+
+
+botaoCadastrar.addEventListener("click", function () {
+
+    const produto = new Produto(
+        nome.value,
+        Number(preco.value),
+        categoria.value,
+        Number(desconto.value)
+    );
+
+    produtos.adicionarProduto(produto);
+
+    produtos.exibir();
+
+});
