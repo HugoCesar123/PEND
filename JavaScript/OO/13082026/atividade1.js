@@ -22,11 +22,22 @@ class Produtos {
 
     adicionarProduto(produto) {
         this.produtos.push(produto);
+
+        // Salvar no localStorage sempre que adicionar
+        this.salvar();
     }
 
     excluirProduto(excluirItens) {
         this.produtos.splice(excluirItens, 1);
+
+        // Atualizar o localStorage depois de excluir
+        this.salvar();
+
         this.exibir();
+    }
+
+    salvar() {
+        localStorage.setItem("produtos", JSON.stringify(this.produtos));
     }
 
     exibir() {
@@ -78,3 +89,29 @@ botaoCadastrar.addEventListener("click", function () {
     produtos.exibir();
 
 });
+
+
+// ==============================
+// CARREGAR PRODUTOS SALVOS
+// ==============================
+
+const dados = localStorage.getItem("produtos");
+
+if (dados) {
+
+    const produtosSalvos = JSON.parse(dados);
+
+    produtosSalvos.forEach(produtoSalvo => {
+
+        const produto = new Produto(
+            produtoSalvo.nome,
+            produtoSalvo.preco,
+            produtoSalvo.categoria,
+            produtoSalvo.desconto
+        );
+
+        produtos.produtos.push(produto);
+    });
+
+    produtos.exibir();
+}
