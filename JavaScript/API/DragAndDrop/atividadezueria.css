@@ -1,0 +1,350 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+    margin: 0;
+
+    color: #292929;
+
+    font-size: 40px;
+}
+
+.subtitulo {
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    color: #777;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   ÁREA DO ROGÉRIO
+========================= */
+
+#area-rogerio {
+
+    width: 350px;
+    height: 390px;
+
+    max-width: 90vw;
+
+    margin: 0 auto;
+
+    border: 4px dashed #b7b7b7;
+
+    border-radius: 25px;
+
+    background: #f8f8f8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    transition: 0.25s;
+}
+
+
+/* Quando estiver arrastando algo sobre ele */
+
+#area-rogerio.dragover {
+
+    border-color: #667eea;
+
+    background: #eeeeff;
+
+    transform: scale(1.03);
+
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25);
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+#rogerio {
+
+    width: 220px !important;
+
+    height: 285px !important;
+
+    max-width: 220px !important;
+
+    max-height: 285px !important;
+
+    object-fit: contain;
+
+    display: block;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem {
+
+    margin-top: 8px;
+
+    padding: 8px 15px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   REQUISITOS
+========================= */
+
+h2 {
+
+    margin-top: 35px;
+
+    margin-bottom: 15px;
+
+    color: #333;
+
+    font-size: 24px;
+}
+
+
+.comidas {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.comida {
+
+    width: 190px;
+
+    min-height: 125px;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    background: #f7f7f7;
+
+    border: 2px solid #e2e2e2;
+
+    cursor: grab;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    user-select: none;
+
+    transition: all 0.2s ease;
+}
+
+
+/* ÍCONE */
+
+.emoji {
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+
+/* TEXTO */
+
+.comida span {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+
+/* PASSAR O MOUSE */
+
+.comida:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #667eea;
+
+    background: #f0f1ff;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ARRASTANDO */
+
+.comida:active {
+
+    cursor: grabbing;
+
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+#botao-fome {
+
+    margin-top: 30px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #292929;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#botao-fome:hover {
+
+    background: #555;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    #area-rogerio {
+
+        width: 280px;
+        height: 330px;
+    }
+
+    #rogerio {
+
+        width: 180px !important;
+        height: 230px !important;
+
+        max-width: 180px !important;
+        max-height: 230px !important;
+    }
+
+    .comida {
+
+        width: 140px;
+    }
+
+}
