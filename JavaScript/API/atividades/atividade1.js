@@ -6,14 +6,14 @@ navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true
 })
-.then(function(stream) {
+.then(function (stream) {
 
     const video = document.querySelector("#camera");
 
     video.srcObject = stream;
 
 })
-.catch(function(erro) {
+.catch(function (erro) {
 
     console.log("Erro ao acessar a câmera:", erro);
 
@@ -24,46 +24,47 @@ navigator.mediaDevices.getUserMedia({
 // GEOLOCALIZAÇÃO
 // ====================
 
-const imgPin = document.getElementById("pin");
+const pin = document.getElementById("pin");
 const msg = document.getElementById("mensagem");
 
 const latitude = document.getElementById("latitude");
 const longitude = document.getElementById("longitude");
 const precisao = document.getElementById("precisao");
 
-// Começa com localização negada
-imgPin.src = "locnegada.png";
+
+// Começa mostrando que a localização ainda não foi autorizada
+pin.textContent = "📍";
 
 navigator.geolocation.getCurrentPosition(
 
-    function(posicao) {
+    function (posicao) {
 
-        // Troca o ícone
-        imgPin.src = "locautorizada.png";
+        // LOCALIZAÇÃO AUTORIZADA
+        pin.textContent = "📍";
 
         msg.textContent = "Localização obtida com sucesso!";
 
-        // Mostra os dados na tela
         latitude.textContent = posicao.coords.latitude;
-        longitude.textContent = posicao.coords.longitude;
-        precisao.textContent = posicao.coords.accuracy + " metros";
 
-        // Também mostra no console
-        console.log("Latitude:", posicao.coords.latitude);
-        console.log("Longitude:", posicao.coords.longitude);
-        console.log("Precisão (m):", posicao.coords.accuracy);
+        longitude.textContent = posicao.coords.longitude;
+
+        precisao.textContent =
+            posicao.coords.accuracy + " metros";
+
     },
 
-    function(erro) {
+    function (erro) {
 
-        imgPin.src = "locnegada.png";
+        // LOCALIZAÇÃO NEGADA
+        pin.textContent = "📍❌";
 
-        msg.textContent = "Acesso à localização negado ou indisponível.";
+        msg.textContent =
+            "Acesso à localização negado ou indisponível.";
 
-        console.log("Erro de geolocalização:", erro.message);
     },
 
     {
         timeout: 5000
     }
+
 );
