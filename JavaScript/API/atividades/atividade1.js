@@ -1,7 +1,3 @@
-// ====================
-// CÂMERA
-// ====================
-
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true
@@ -20,10 +16,6 @@ navigator.mediaDevices.getUserMedia({
 });
 
 
-// ====================
-// GEOLOCALIZAÇÃO
-// ====================
-
 const pin = document.getElementById("pin");
 const msg = document.getElementById("mensagem");
 
@@ -32,14 +24,12 @@ const longitude = document.getElementById("longitude");
 const precisao = document.getElementById("precisao");
 
 
-// Começa mostrando que a localização ainda não foi autorizada
 pin.textContent = "📍";
 
 navigator.geolocation.getCurrentPosition(
 
     function (posicao) {
 
-        // LOCALIZAÇÃO AUTORIZADA
         pin.textContent = "📍";
 
         msg.textContent = "Localização obtida com sucesso!";
@@ -55,7 +45,6 @@ navigator.geolocation.getCurrentPosition(
 
     function (erro) {
 
-        // LOCALIZAÇÃO NEGADA
         pin.textContent = "📍❌";
 
         msg.textContent =
