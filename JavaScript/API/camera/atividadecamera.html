@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="atividadecamera.css">
+
+    <title>Meu App</title>
+
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        #camera,
+        #foto {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            background-color: black;
+        }
+
+        #pin {
+            font-size: 80px;
+        }
+
+        #canvas {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <video id="camera" autoplay playsinline></video>
+
+        <img id="foto">
+
+    </div>
+
+    <div id="pin">📍</div>
+
+    <p id="mensagem">Verificando localização...</p>
+
+    <p>Latitude: <span id="latitude">---</span></p>
+
+    <p>Longitude: <span id="longitude">---</span></p>
+
+    <p>Precisão: <span id="precisao">---</span></p>
+
+    <canvas id="canvas"></canvas>
+
+    <button id="botao">Tirar Foto</button>
+
+    <script src="atividadecamera.js"></script>
+
+</body>
+
+</html>
