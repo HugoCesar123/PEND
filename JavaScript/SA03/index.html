@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eventos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Eventos</h1>
+        <p>Encontre eventos incríveis perto de você!</p>
+    </header>
+
+
+    <main>
+
+        <section class="pesquisa">
+
+            <h2>Ache um evento aqui</h2>
+
+            <div class="filtros">
+
+                <input
+                    type="text"
+                    id="cidade"
+                    placeholder="Digite uma cidade..."
+                >
+
+                <select id="categoria">
+                    <option value="">Todas as categorias</option>
+                    <option value="music">Música</option>
+                    <option value="sports">Esportes</option>
+                    <option value="arts">Artes</option>
+                    <option value="theatre">Teatro</option>
+                </select>
+
+                <button id="buscarEventos">
+                     Buscar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <p id="carregando" class="mensagem">
+            Carregando eventos...
+        </p>
+
+
+        <p id="erro" class="mensagem erro"></p>
+
+        <section>
+
+            <h2>Eventos encontrados</h2>
+
+            <div id="resultadoEventos" class="eventos">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="modal" class="modal">
+
+        <div class="modal-conteudo">
+
+            <button id="fecharModal" class="fechar">
+            </button>
+
+            <div id="detalhesEvento">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>Projeto de Eventos - HTML, CSS e JavaScript</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
