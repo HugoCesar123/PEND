@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catálogo de Produtos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <nav class="d-flex flex-wrap align-items-center justify-content-between">
+
+                <a href="#inicio" class="text-white text-decoration-none fs-4">
+                    Minha Loja
+                </a>
+
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link text-white">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#produtos" class="nav-link text-white">Produtos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contato" class="nav-link text-white">Contato</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- DESTAQUE -->
+    <section id="inicio" class="bg-light p-5 text-center">
+        <div class="container">
+
+            <h1 class="display-4 fw-bold">Catálogo de Produtos</h1>
+
+            <p class="lead">
+                Encontre os melhores produtos para você!
+            </p>
+
+            <a href="#produtos" class="btn btn-primary btn-lg">
+                Ver Produtos
+            </a>
+
+        </div>
+    </section>
+
+    <!-- CARROSSEL -->
+    <div id="meuCarrossel" class="carousel slide container mt-4"
+         data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="https://placehold.co/1200x350/212529/ffffff?text=Ofertas+Especiais"
+                     class="d-block w-100" alt="Ofertas especiais">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://placehold.co/1200x350/0d6efd/ffffff?text=Novos+Produtos"
+                     class="d-block w-100" alt="Novos produtos">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://placehold.co/1200x350/198754/ffffff?text=Confira+as+Novidades"
+                     class="d-block w-100" alt="Confira as novidades">
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#meuCarrossel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#meuCarrossel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="container py-5">
+
+        <h2 class="text-center mb-4">Nossos Produtos</h2>
+
+        <div class="row g-4">
+
+            <!-- PRODUTO 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x250?text=Fone+de+Ouvido"
+                         class="card-img-top" alt="Fone de ouvido">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Fone de Ouvido</h5>
+                        <p class="card-text">Fone de ouvido para o dia a dia.</p>
+                        <p class="text-success fw-bold">R$ 99,90</p>
+                        <a href="#contato" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x250?text=Relogio"
+                         class="card-img-top" alt="Relógio">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Relógio</h5>
+                        <p class="card-text">Relógio moderno e elegante.</p>
+                        <p class="text-success fw-bold">R$ 149,90</p>
+                        <a href="#contato" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x250?text=Tenis"
+                         class="card-img-top" alt="Tênis">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Tênis</h5>
+                        <p class="card-text">Tênis confortável para usar diariamente.</p>
+                        <p class="text-success fw-bold">R$ 199,90</p>
+                        <a href="#contato" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x250?text=Mochila"
+                         class="card-img-top" alt="Mochila">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Mochila</h5>
+                        <p class="card-text">Mochila prática para escola e trabalho.</p>
+                        <p class="text-success fw-bold">R$ 119,90</p>
+                        <a href="#contato" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x250?text=Camisa"
+                         class="card-img-top" alt="Camisa">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Camisa</h5>
+                        <p class="card-text">Camisa básica para várias ocasiões.</p>
+                        <p class="text-success fw-bold">R$ 79,90</p>
+                        <a href="#contato" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x250?text=Caixa+de+Som"
+                         class="card-img-top" alt="Caixa de som">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Caixa de Som</h5>
+                        <p class="card-text">Caixa de som para ouvir suas músicas.</p>
+                        <p class="text-success fw-bold">R$ 169,90</p>
+                        <a href="#contato" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="bg-light py-5">
+        <div class="container">
+
+            <h2 class="text-center mb-4">Entre em Contato</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control"
+                                   id="nome" placeholder="Digite seu nome" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control"
+                                   id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="mensagem"
+                                      rows="4" placeholder="Digite sua mensagem"
+                                      required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+                            Enviar
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-dark text-white text-center p-4">
+        <p class="mb-0">
+            &copy; 2026 Minha Loja - Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
